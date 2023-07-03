@@ -10,10 +10,12 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import Banner from "@/components/Banner";
+import Footer from "@/components/Footer";
 
 
 export default function Home() {
   return (
+    <>
     <Flex
       w={"100%"}
       h={"100%"}
@@ -155,6 +157,8 @@ export default function Home() {
         </VStack>
       </Flex>
     </Flex>
+    <Footer/>
+    </>
   );
 }
 

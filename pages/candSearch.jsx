@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import { data } from "@/data";
 import {
   Button,
@@ -60,6 +61,7 @@ const CandSearch = () => {
   };
 
   return (
+    <>
     <Flex w={"100%"} minH={"100vh"} justifyContent={"space-between"} alignItems={"center"} p={4}>
       <Flex flexDirection={"column"} justifyContent={"center"} shadow={"md"} h={"fit-content"}>
         <VStack justifyContent={"center"} spacing={3} m={3} alignItems={"flex-start"}>
@@ -129,6 +131,8 @@ const CandSearch = () => {
         </Table>
       </Flex>
     </Flex>
+    <Footer/>
+    </>
   );
 };
 
