@@ -16,8 +16,8 @@ import Header from "@/components/Header";
 import { motion } from "framer-motion";
 
 export default function Home() {
-  const [isSmallerThan580] = useMediaQuery('(max-width:580px)')
-  console.log(isSmallerThan580)
+  const [isSmallerThan580] = useMediaQuery("(max-width:580px)");
+  console.log(isSmallerThan580);
   return (
     <>
       <Header />
@@ -63,7 +63,7 @@ export default function Home() {
             alignItems={"flex-start"}
             spacing={5}
             maxW={"500px"}
-            initial={{ opacity: 0, x:-40 }}
+            initial={{ opacity: 0 }}
             viewport={{ once: true }}
             whileInView={{ opacity: 1, x: 0, transition: { duration: 0.6 } }}
           >
@@ -87,7 +87,7 @@ export default function Home() {
             src="undraw_resume.svg"
             alt="Feature Image"
             width={{ base: "280px", md: "350px", lg: "400px" }}
-            initial={{ opacity: 0, x:40 }}
+            initial={{ opacity: 0 }}
             viewport={{ once: true }}
             whileInView={{ opacity: 1, x: 0, transition: { duration: 0.6 } }}
           />
@@ -107,7 +107,7 @@ export default function Home() {
             alignItems={"flex-start"}
             spacing={5}
             maxW={"500px"}
-            initial={{ opacity: 0, x:40 }}
+            initial={{ opacity: 0 }}
             viewport={{ once: true }}
             whileInView={{ opacity: 1, x: 0, transition: { duration: 0.6 } }}
           >
@@ -131,7 +131,7 @@ export default function Home() {
             src="undraw_innovative.svg"
             alt="Feature Image"
             width={{ base: "280px", md: "350px", lg: "400px" }}
-            initial={{ opacity: 0, x: -40 }}
+            initial={{ opacity: 0 }}
             viewport={{ once: true }}
             whileInView={{ opacity: 1, x: 0, transition: { duration: 0.6 } }}
           />
