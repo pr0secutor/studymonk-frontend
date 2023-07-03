@@ -4,7 +4,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <Flex w={"100%"} flexDir={"column"} bgColor={"#051237"} alignItems={"center"}>
+    <Flex w={"100%"} flexDir={"column"} bgColor={"#061237"} alignItems={"center"}>
       <Flex
         flexDirection={{ base: "column", lg: "row" }}
         justifyContent={"space-evenly"}

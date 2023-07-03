@@ -11,11 +11,13 @@ import {
 } from "@chakra-ui/react";
 import Banner from "@/components/Banner";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 
 export default function Home() {
   return (
     <>
+    <Header/>
     <Flex
       w={"100%"}
       h={"100%"}

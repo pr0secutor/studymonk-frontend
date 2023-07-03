@@ -20,7 +20,6 @@ const Banner = () => {
       w={"100%"}
       flexDir={"column"}
       p={10}
-      mt={10}
       mb={10}
       bgColor={"#061237"}
       gap={10}
