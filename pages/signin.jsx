@@ -12,14 +12,19 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 
 export default function SignIn() {
   return (
     <Flex
+      as={motion.div}
       minH={"100vh"}
       align={"center"}
       justify={"center"}
-      bg={useColorModeValue("gray.50", "gray.800")}
+      bg={"gray.50"}
+      initial={{ opacity: 0 }}
+      viewport={{ once: true }}
+      whileInView={{ opacity: 1, transition: { duration: 0.6 } }}
     >
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
@@ -28,12 +33,7 @@ export default function SignIn() {
             to enjoy all of our cool <Link color={"#1455FD"}>features</Link> ✌️
           </Text>
         </Stack>
-        <Box
-          rounded={"lg"}
-          bg={useColorModeValue("white", "gray.700")}
-          boxShadow={"lg"}
-          p={8}
-        >
+        <Box rounded={"lg"} bg={"white"} boxShadow={"lg"} p={8}>
           <Stack spacing={4}>
             <FormControl id="email">
               <FormLabel>Email address</FormLabel>

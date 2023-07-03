@@ -41,7 +41,8 @@ const Banner = () => {
           borderRadius={"3xl"}
           borderTopRightRadius={"200px"}
           borderBottomLeftRadius={"200px"}
-          whileInView={{ scale: 1.05, transition: { duration: 0.4 } }}
+          initial={{opacity:0}}
+          animate={{opacity:1, transition:{duration:0.6}}}
         />
         <VStack
           spacing={{base:4,md:8}}

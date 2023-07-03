@@ -15,11 +15,11 @@ const Header = () => {
       h={24}
       bgColor={"#061237"}
       justifyContent={"space-between"}
-      p={8}
+      p={{base:4,sm:8}}
     >
       <HStack spacing={1}>
-        <SunIcon color={"#1455FD"} />
-        <Heading color={"white"} fontSize={"2xl"}>Talent Port</Heading>
+        <SunIcon boxSize={6} color={"#1455FD"} />
+        <Heading color={"white"} fontSize={{base:"md",sm:"2xl"}}>Talent Port</Heading>
       </HStack>
       <HStack>
         <Button

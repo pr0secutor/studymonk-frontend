@@ -16,16 +16,21 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
+import { motion } from "framer-motion";
 
 export default function SignUp() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
     <Flex
+      as={motion.div}
       minH={"100vh"}
       align={"center"}
       justify={"center"}
-      bg={useColorModeValue("gray.50", "gray.800")}
+      bg={"gray.50"}
+      initial={{ opacity: 0 }}
+      viewport={{ once: true }}
+      whileInView={{ opacity: 1, transition: { duration: 0.6 } }}
     >
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
@@ -36,12 +41,7 @@ export default function SignUp() {
             to be a part of us
           </Text>
         </Stack>
-        <Box
-          rounded={"lg"}
-          bg={useColorModeValue("white", "gray.700")}
-          boxShadow={"lg"}
-          p={8}
-        >
+        <Box rounded={"lg"} bg={"white"} boxShadow={"lg"} p={8}>
           <Stack spacing={4}>
             <HStack>
               <Box>
@@ -64,7 +64,10 @@ export default function SignUp() {
             <FormControl id="password" isRequired>
               <FormLabel>Password</FormLabel>
               <InputGroup>
-                <Input focusBorderColor={"#1455FD"} type={showPassword ? "text" : "password"} />
+                <Input
+                  focusBorderColor={"#1455FD"}
+                  type={showPassword ? "text" : "password"}
+                />
                 <InputRightElement h={"full"}>
                   <Button
                     variant={"ghost"}
