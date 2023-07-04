@@ -27,6 +27,7 @@ export default function Home() {
         alignItems={"center"}
         justifyContent={"center"}
         flexDir={"column"}
+        overflowX={"hidden"}
       >
         <Banner />
         <VStack w={"100%"} spacing={4} mt={10} mb={10} p={4}>
@@ -60,12 +61,13 @@ export default function Home() {
         >
           <VStack
             as={motion.div}
+            pos={"relative"}
             alignItems={"flex-start"}
             spacing={5}
             maxW={"500px"}
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 0,right:60 }}
             viewport={{ once: true }}
-            whileInView={{ opacity: 1, x: 0, transition: { duration: 0.6 } }}
+            whileInView={{ opacity: 1, right: 0, transition: { duration: 0.6 } }}
           >
             <HStack>
               <Image src="line.svg" alt="line_svg" w={"20px"} />
@@ -84,12 +86,13 @@ export default function Home() {
           </VStack>
           <Image
             as={motion.img}
+            pos={"relative"}
             src="undraw_resume.svg"
             alt="Feature Image"
             width={{ base: "280px", md: "350px", lg: "400px" }}
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 0,left:60 }}
             viewport={{ once: true }}
-            whileInView={{ opacity: 1, x: 0, transition: { duration: 0.6 } }}
+            whileInView={{ opacity: 1, left: 0, transition: { duration: 0.6 } }}
           />
         </Flex>
 
@@ -107,7 +110,7 @@ export default function Home() {
             alignItems={"flex-start"}
             spacing={5}
             maxW={"500px"}
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 0,x: 60 }}
             viewport={{ once: true }}
             whileInView={{ opacity: 1, x: 0, transition: { duration: 0.6 } }}
           >
@@ -131,7 +134,7 @@ export default function Home() {
             src="undraw_innovative.svg"
             alt="Feature Image"
             width={{ base: "280px", md: "350px", lg: "400px" }}
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 0,x: -60 }}
             viewport={{ once: true }}
             whileInView={{ opacity: 1, x: 0, transition: { duration: 0.6 } }}
           />
