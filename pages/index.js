@@ -6,6 +6,9 @@ import {
   HStack,
   Heading,
   Image,
+  Input,
+  InputGroup,
+  InputRightElement,
   Text,
   VStack,
   useMediaQuery,
@@ -65,9 +68,13 @@ export default function Home() {
             alignItems={"flex-start"}
             spacing={5}
             maxW={"500px"}
-            initial={{ opacity: 0,right:60 }}
+            initial={{ opacity: 0, right: 60 }}
             viewport={{ once: true }}
-            whileInView={{ opacity: 1, right: 0, transition: { duration: 0.6 } }}
+            whileInView={{
+              opacity: 1,
+              right: 0,
+              transition: { duration: 0.6 },
+            }}
           >
             <HStack>
               <Image src="line.svg" alt="line_svg" w={"20px"} />
@@ -90,7 +97,7 @@ export default function Home() {
             src="undraw_resume.svg"
             alt="Feature Image"
             width={{ base: "280px", md: "350px", lg: "400px" }}
-            initial={{ opacity: 0,left:60 }}
+            initial={{ opacity: 0, left: 60 }}
             viewport={{ once: true }}
             whileInView={{ opacity: 1, left: 0, transition: { duration: 0.6 } }}
           />
@@ -110,7 +117,7 @@ export default function Home() {
             alignItems={"flex-start"}
             spacing={5}
             maxW={"500px"}
-            initial={{ opacity: 0,x: 60 }}
+            initial={{ opacity: 0, x: 60 }}
             viewport={{ once: true }}
             whileInView={{ opacity: 1, x: 0, transition: { duration: 0.6 } }}
           >
@@ -134,7 +141,7 @@ export default function Home() {
             src="undraw_innovative.svg"
             alt="Feature Image"
             width={{ base: "280px", md: "350px", lg: "400px" }}
-            initial={{ opacity: 0,x: -60 }}
+            initial={{ opacity: 0, x: -60 }}
             viewport={{ once: true }}
             whileInView={{ opacity: 1, x: 0, transition: { duration: 0.6 } }}
           />
@@ -195,6 +202,40 @@ export default function Home() {
               With us, you create a transparent internal mobility programme that
               encourages participation. Sourcing the team becomes easy.
             </Text>
+          </VStack>
+        </Flex>
+        <Flex
+          w={"90%"}
+          m={{base:10,sm:20}}
+          p={{base:6,sm:16}}
+          bgColor={"#1455FD"}
+          borderRadius={16}
+          flexDirection={{ base: "column", md: "row" }}
+          alignItems={"center"}
+          gap={10}
+        >
+          <Heading fontSize={{base:"2xl",md:"3xl",lg:"5xl"}} color={"white"}>
+            Find the best Talent and build relationship!
+          </Heading>
+          <VStack h={"fit-content"} w={{base:"80%",md:"60%"}} spacing={10}>
+            <Text fontSize={"lg"} color={"white"}>
+              The most complete Talent Relationship Platform for talent
+              sourcing, recruitment events and internal mobility.
+            </Text>
+            <InputGroup size={"md"}>
+              <Input variant={"outline"} p={4.5} type="text" placeholder="Email" bgColor={"white"}/>
+              <InputRightElement w={"fit-content"} mr={2}>
+                <Button
+                  w={"fit-content"}
+                  size={"sm"}
+                  color={"white"}
+                  bgColor={"#061237"}
+                  _hover={{ bgColor: "gray.300", color: "black" }}
+                >
+                  Get a Demo
+                </Button>
+              </InputRightElement>
+            </InputGroup>
           </VStack>
         </Flex>
       </Flex>
