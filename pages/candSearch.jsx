@@ -12,6 +12,8 @@ import {
   Tbody,
   Td,
   Text,
+  Th,
+  Thead,
   Tr,
   VStack,
 } from "@chakra-ui/react";
@@ -62,76 +64,106 @@ const CandSearch = () => {
 
   return (
     <>
-    <Flex w={"100%"} minH={"100vh"} justifyContent={"space-between"} alignItems={"center"} p={4}>
-      <Flex flexDirection={"column"} justifyContent={"center"} shadow={"md"} h={"fit-content"}>
-        <VStack justifyContent={"center"} spacing={3} m={3} alignItems={"flex-start"}>
-          <Heading fontSize={"md"}>Locations</Heading>
-          <Grid templateColumns="repeat(2, 1fr)" gap={3}>
-            {locationFilters.map((category, i) => {
-              return (
-                <Button
-                  key={i}
-                  colorScheme="gray"
-                  variant={"outline"}
-                  size={"xs"}
-                  _hover={{}}
-                  sx={
-                    selectedFilters?.includes(category)
-                      ? { bgColor: "#1455FD", color: "white" }
-                      : {}
-                  }
-                  onClick={() => handFilterButtonClick(category)}
-                >
-                  {category}
-                </Button>
-              );
-            })}
-          </Grid>
-        </VStack>
-        <VStack justifyContent={"center"} spacing={3} m={3} alignItems={"flex-start"}>
-          <Heading fontSize={"md"}>Roles</Heading>
-          <Grid templateColumns="repeat(2, 1fr)" gap={3}>
-            {roleFilters.map((category, i) => {
-              return (
-                <Button
-                  key={i}
-                  colorScheme="gray"
-                  variant={"outline"}
-                  size={"xs"}
-                  _hover={{}}
-                  sx={
-                    selectedFilters?.includes(category)
-                      ? { bgColor: "#1455FD", color: "white" }
-                      : {}
-                  }
-                  onClick={() => handFilterButtonClick(category)}
-                >
-                  {category}
-                </Button>
-              );
-            })}
-          </Grid>
-        </VStack>
+      <Flex
+        w={"100%"}
+        flexDirection={{ base: "column", md: "row" }}
+        minH={"100vh"}
+        justifyContent={"space-between"}
+        alignItems={"center"}
+        p={4}
+        gap={8}
+      >
+        <Flex
+          flexDirection={"column"}
+          justifyContent={"center"}
+          shadow={"md"}
+          h={"fit-content"}
+        >
+          <VStack
+            justifyContent={"center"}
+            spacing={3}
+            m={3}
+            alignItems={"flex-start"}
+          >
+            <Heading fontSize={"md"}>Locations</Heading>
+            <Grid templateColumns="repeat(2, 1fr)" gap={3}>
+              {locationFilters.map((category, i) => {
+                return (
+                  <Button
+                    key={i}
+                    colorScheme="gray"
+                    variant={"outline"}
+                    size={"xs"}
+                    _hover={{}}
+                    sx={
+                      selectedFilters?.includes(category)
+                        ? { bgColor: "#1455FD", color: "white" }
+                        : {}
+                    }
+                    onClick={() => handFilterButtonClick(category)}
+                  >
+                    {category}
+                  </Button>
+                );
+              })}
+            </Grid>
+          </VStack>
+          <VStack
+            justifyContent={"center"}
+            spacing={3}
+            m={3}
+            alignItems={"flex-start"}
+          >
+            <Heading fontSize={"md"}>Roles</Heading>
+            <Grid templateColumns="repeat(2, 1fr)" gap={3}>
+              {roleFilters.map((category, i) => {
+                return (
+                  <Button
+                    key={i}
+                    colorScheme="gray"
+                    variant={"outline"}
+                    size={"xs"}
+                    _hover={{}}
+                    sx={
+                      selectedFilters?.includes(category)
+                        ? { bgColor: "#1455FD", color: "white" }
+                        : {}
+                    }
+                    onClick={() => handFilterButtonClick(category)}
+                  >
+                    {category}
+                  </Button>
+                );
+              })}
+            </Grid>
+          </VStack>
+        </Flex>
+        <Flex w={{base:"100%",sm:"70%"}} flexDirection={"column"} justifyContent={"center"}>
+          <Heading fontSize={"3xl"}>Candidates</Heading>
+          <Table pos={"relative"} size={{base:"sm",sm:"md"}}>
+            <Thead>
+              <Tr>
+                <Th>Name</Th>
+                <Th>Role</Th>
+                <Th>Location</Th>
+              </Tr>
+            </Thead>
+            <Tbody>
+              {filteredItems.map((item, i) => {
+                return (
+                  <Tr key={i}>
+                    <Td>{item.name}</Td>
+                    <Td>{item.role}</Td>
+                    <Td>{item.location}</Td>
+                  </Tr>
+                );
+              })}
+              <Tr></Tr>
+            </Tbody>
+          </Table>
+        </Flex>
       </Flex>
-      <Flex w={"70%"} flexDirection={"column"} justifyContent={"center"}>
-        <Heading fontSize={"3xl"}>Candidates</Heading>
-        <Table pos={"relative"}>
-          <Tbody>
-            {filteredItems.map((item, i) => {
-              return (
-                <Tr key={i}>
-                  <Td>{item.name}</Td>
-                  <Td>{item.role}</Td>
-                  <Td>{item.location}</Td>
-                </Tr>
-              );
-            })}
-            <Tr></Tr>
-          </Tbody>
-        </Table>
-      </Flex>
-    </Flex>
-    <Footer/>
+      <Footer />
     </>
   );
 };
